@@ -2,7 +2,6 @@ import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-
 void main() {
   runApp(MyApp());
 }
@@ -36,10 +35,18 @@ class MyHomePage extends StatelessWidget {
     var appState = context.watch<MyAppState>();
 
     return Scaffold(
+      appBar: AppBar(),
       body: Column(
         children: [
           Text('A random idea:'),
           Text(appState.current.asLowerCase),
+
+          ElevatedButton(
+              onPressed: () {
+                print("button pressed");
+              },
+              child: Text("Next")
+          ),
         ],
       ),
     );
@@ -54,9 +61,3 @@ class GeneratorPage extends StatelessWidget {
     throw UnimplementedError();
   }
 }
-
-
-
-
-
-
